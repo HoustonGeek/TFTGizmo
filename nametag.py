@@ -35,13 +35,21 @@ label_pallete[0] = 0xFFFFFF   #White
 label_sprite = displayio.TileGrid(label_bitmap, pixel_shader=label_pallete, x=0,y=100)
 splash.append(label_sprite)
 
-# Draw a label
-text_group = displayio.Group(scale=2, x=55, y=25)
-text = "Hello,  My\n  Name is"
+# Draw the first line label
+text_group = displayio.Group(scale=2, x=65, y=25)
+text = "Hello, My"
 text_area = label.Label(terminalio.FONT, text=text, color=0xFFFFFF)
 text_group.append(text_area)  # Subgroup for text scaling
-splash.append(text_group)
 
+#draw the 2nd line
+text_group2 = displayio.Group(scale=2,x=80, y=60)
+text2 = "Name Is"
+text_area2 = label.Label(terminalio.FONT, text=text2, color=0xFFFFFF)
+text_group2.append(text_area2)
+
+#now show them
+splash.append(text_group)
+splash.append(text_group2)
 #Draw name
 name_group = displayio.Group(scale=3, x=25, y=160)
 myname = "HoustonGeek"
