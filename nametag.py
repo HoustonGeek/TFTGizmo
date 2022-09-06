@@ -50,6 +50,7 @@ text_group2.append(text_area2)
 #now show them
 splash.append(text_group)
 splash.append(text_group2)
+
 #Draw name
 name_group = displayio.Group(scale=3, x=25, y=160)
 myname = "HoustonGeek"
