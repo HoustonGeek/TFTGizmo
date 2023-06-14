@@ -15,17 +15,17 @@ splash = displayio.Group()
 display.show(splash)
 
 #Top red bar
-color_bitmap = displayio.Bitmap(240, 100, 1)
-color_palette = displayio.Palette(1)
-color_palette[0] = 0xFF0000  # Bright Red
-bg_sprite = displayio.TileGrid(color_bitmap, pixel_shader=color_palette, x=0, y=0)
+color_bitmap = displayio.Bitmap(240, 100, 1). #create a box, 240 pixels wide, 100 pixels tall
+color_palette = displayio.Palette(1). # add it to a palette
+color_palette[0] = 0xFF0000  # Bright Red.  #change the color
+bg_sprite = displayio.TileGrid(color_bitmap, pixel_shader=color_palette, x=0, y=0) #setup a sprite to add it to the display, starting at the top left
 splash.append(bg_sprite) #add to group to show on screen
 
 #Draw bottom bar
 bottom_bar = displayio.Bitmap(240,20,1)
 bottom_pallete = displayio.Palette(1)
 bottom_pallete[0] = 0xFF0000  #Red
-bottom_sprite = displayio.TileGrid(bottom_bar, pixel_shader=bottom_pallete, x=0, y=220)
+bottom_sprite = displayio.TileGrid(bottom_bar, pixel_shader=bottom_pallete, x=0, y=220) #if the screen is 240 tall, this fills the bottom
 splash.append(bottom_sprite)
 
 #Draw white label background
